@@ -1,0 +1,6 @@
+# Current dependencies
+pytest>=6.0.0
+
+# Future GUI enhancements
+# PyQt5>=5.15.0
+# Kivy>=2.0.0
