@@ -1,16 +1,11 @@
 from datetime import datetime
 
 class CountdownTimer:
-    def __init__(self, target_date):
-        self.set_target_date(target_date)
-        
-    def set_target_date(self, target_date):
-        try:
-            self.target_date = datetime.strptime(target_date, "%Y-%m-%d %H:%M:%S")
-            self.valid_date = True
-        except ValueError:
-            self.valid_date = False
-        
+    def __init__(self, target_date, title):
+        self.target_date = target_date
+        self.title = title
+        self.valid_date = True  
+    
     def get_time_remaining(self):
         if self.valid_date:
             now = datetime.now()

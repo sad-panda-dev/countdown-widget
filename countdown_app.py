@@ -3,27 +3,6 @@ from tkinter import messagebox, ttk
 from datetime import datetime
 from timer.countdown_timer import CountdownTimer
 
-# class CountdownTimer:
-#     def __init__(self, target_date, title):
-#         self.target_date = target_date
-#         self.title = title
-#         self.valid_date = True  # Assuming target_date is always valid upon creation
-    
-#     def get_time_remaining(self):
-#         if self.valid_date:
-#             now = datetime.now()
-#             remaining = self.target_date - now
-#             if remaining.total_seconds() > 0:
-#                 days, seconds = remaining.days, remaining.seconds
-#                 hours = seconds // 3600
-#                 minutes = (seconds % 3600) // 60
-#                 seconds = seconds % 60
-#                 milliseconds = remaining.microseconds // 1000
-#                 return f"{days}d {hours}h {minutes}m {seconds}s {milliseconds}ms"
-#             else:
-#                 return "Time's up!"
-#         else:
-#             return "Invalid Date"
 
 class CountdownApp:
     def __init__(self, root):
@@ -91,15 +70,15 @@ class CountdownApp:
             update_countdown_display()
             
             def on_close():
-                new_window.destroy()  # Destroy timer window
-                self.root.destroy()  # Close main window and exit program
+                new_window.destroy()  
+                self.root.destroy()  
             
             close_button = ttk.Button(new_window, text="Close", command=on_close)
             close_button.pack(pady=10)
             
-            new_window.protocol("WM_DELETE_WINDOW", on_close)  # Handle window close event
+            new_window.protocol("WM_DELETE_WINDOW", on_close)  
             
-            # Hide the main window
+            
             self.root.withdraw()
 
 def main():
